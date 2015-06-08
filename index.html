@@ -1,16 +1,57 @@
 <html>
 <head>
-    <title>Alo Mundo?</title>
+    <title>#hashtagGenerator</title>
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />        
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .header-row {
+            background-color: #000000;
+            color: #5ed4e5;
+            text-align:center;
+        }
+        textarea
+        {
+            min-height:200px;
+            min-width:200px;
+        }
+    </style>
+    
 </head>
 <body>
-
  <div>
-     <span>Hello World</span>
+     <div class="container-fluid" data-bind="with:htg.generatorViewModel">
+         <div class="row">
+             <div class="col-sm-12 header-row">
+                 <h1>#surfBoard hashtag generator</h1>
+             </div>                                     
+         </div>
+         <div class="row" style="padding-top:8px;">
+             <div class="col-sm-12" style="text-align:center;">
+                 <label for="sel_count">How Many??</label>
+                 <select id="sel_count" data-bind="options:CountOptions,optionsText:'label', optionsValue:'value', value:SelectedCount"></select>
+             </div>
+         </div>
+         <div class="row" style="padding-top:8px;">
+             <div class="col-sm-12" style="text-align:center;" id="hash-holder">
+                 <textarea id="ta_theHashes" data-bind="text:TheHashes()"></textarea>  
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-sm-12" style="text-align:center; padding-top:12px;">
+                 <input type="button" class="btn btn-danger" data-bind="attr:{'value':GenerateBtnText}, click:GenerateTags" id="btn_generate" />
+                 <input type="button" class="btn btn-success" value="Select" id="btn_copy" data-bind="click:SelectText" />
+             </div>
+         </div>
+     </div>
  </div>
+ <script src="js/knockout/knockout-3.3.0.js"></script>
 <script src="js/storage/memory-store.js"></script>
 <script src="lib/jquery-1.8.2.min.js"></script>
 <script src="js/storage/memory-store.js"></script>
 <script src="js/main.js"></script>
-
+ <script src="Scripts/toastr.js"></script>
+ <script src="Scripts/app/generatorViewModel.js"></script>
 </body>
 </html>
