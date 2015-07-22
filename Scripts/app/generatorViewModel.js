@@ -32,30 +32,12 @@ $(function () {
             var genTextIndex = Math.floor((Math.random() * genWordCeiling));
             generateBtnText(generateWords()[genTextIndex]);
 
-
             theHashes(tempHashes);
         },
 
         selectText = function()
-        {
-            //var doc = document
-            //, text = doc.getElementById('hash-holder')
-            //, range, selection
-            //    ;
-            //    if (doc.body.createTextRange) {
-            //        range = document.body.createTextRange();
-            //        range.moveToElementText(text);
-            //        range.select();
-            //    } else if (window.getSelection) {
-            //        selection = window.getSelection();
-            //        range = document.createRange();
-            //        range.selectNodeContents(text);
-            //        selection.removeAllRanges();
-            //        selection.addRange(range);
-            //    }
-
+        {            
             $('#ta_theHashes').select();
-
         },
 
         init = function () {
@@ -116,7 +98,7 @@ $(function () {
 
             boardWordsTemp.push('Berrd');
             boardWordsTemp.push('Bert');
-            boardWordsTemp.push('Beoardh');
+            //boardWordsTemp.push('Beoardh');
             boardWordsTemp.push('Behrd');
 
             boardWordsTemp.push('Bherd');
